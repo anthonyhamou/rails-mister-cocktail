@@ -1,1 +1,41 @@
 
+<h1><strong><%= @cocktail.name %></strong></h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+      <hr>
+      <h3>Recette à suivre pour votre cocktail : </h3>
+      <p><% @cocktail.doses.each do |dose| %></p>
+      <%= dose.ingredient.name %>
+      <%= dose.description %>
+      <%= link_to ' <i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, dose_path(dose),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" }, class: "btn btn-warning" %>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+        <hr>
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+            <%= f.association :ingredient, collection: Ingredient.all.order('name ASC') %>
+            <%= f.input :description %>
+            <%= f.submit "add the new recipe", class: "btn btn-primary" %>
+          <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+
+    </div>
+  </div>
+</div>
+<hr>
+<%= link_to 'Back', cocktails_path %> |
+<%= link_to 'Create a new cocktail', new_cocktail_path %> |
+<%= link_to 'Add a new recipe', new_cocktail_dose_path(@cocktail) %> |
+<%= link_to 'Import a new image', cocktails_path %>
+
+
+
+
+

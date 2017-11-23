@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <% @cocktails.each do |flat| %>
+    <% @cocktails.each do |cocktail| %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'restaurant.jpg' %>);">
-            <div class="card-category">Popular</div>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'cocktail.jpg' %>);">
+            <div class="card-category"></div>
             <div class="card-description">
               <h2><%= cocktail.name %></h2>
             </div>
@@ -15,4 +15,3 @@
   </div>
 </div>
 
-<%= link_to 'New Cocktail', new_cocktail_path %>
