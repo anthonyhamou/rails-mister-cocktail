@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |flat| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path 'restaurant.jpg' %>);">
+            <div class="card-category">Popular</div>
+            <div class="card-description">
+              <h2><%= cocktail.name %></h2>
+            </div>
+            <a class="card-link" href="#" ></a>
+        </div>
+        <%= link_to '', cocktail_path(cocktail), class: 'card-link'%>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'New Cocktail', new_cocktail_path %>
