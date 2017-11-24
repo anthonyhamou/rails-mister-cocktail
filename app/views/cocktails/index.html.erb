@@ -2,8 +2,7 @@
   <div class="row">
     <% @cocktails.each do |cocktail| %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_tag("cocktail_red.jpg",
-      width: 400, height: 300, crop: :fill) %>);">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path("sya2nsevnhdw6mv0tced.jpg") %>');">
             <div class="card-category"></div>
             <div class="card-description">
               <h2><%= cocktail.name %></h2>
