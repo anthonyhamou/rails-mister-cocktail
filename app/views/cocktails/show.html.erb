@@ -21,6 +21,11 @@
             <%= f.association :ingredient, collection: Ingredient.all.order('name ASC') %>
             <%= f.input :description %>
             <%= f.submit "add the new recipe", class: "btn btn-primary" %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+            <% if f.photo.present? %>
+            <%= cl_image_tag f.photo, height: 300, width: 400, crop: :fill %>
+            <% end %>
           <% end %>
     </div>
     <div class="col-xs-12 col-sm-4">
