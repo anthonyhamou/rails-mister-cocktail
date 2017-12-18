@@ -15,8 +15,8 @@ class CocktailsController < ApplicationController
 
   def update
     @cocktail = Cocktail.find(params[:id])
-    @cocktail.photo = params[:cocktail][:photo]
-    # @cocktail.update(cocktail_params)
+    # @cocktail.photo = params[:cocktail][:photo]
+    @cocktail.update(cocktail_params)
     @dose = Dose.new
     if @cocktail.save
       # nouvelle requete HTTP
